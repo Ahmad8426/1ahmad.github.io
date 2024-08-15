@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { FaAddressCard, FaPhoneAlt } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
@@ -15,23 +16,29 @@ import { PhoneInput } from "@/components/ui/phone-input";
 import { useToast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { isValidPhoneNumber } from "react-phone-number-input";
 import { z } from "zod";
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { parsePhoneNumber, isValidPhoneNumber } from "libphonenumber-js";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { Toaster } from "@/components/ui/toaster";
 
 const FormSchema = z.object({
   name: z.string().min(2, {
-    message: "Username must be at least 2 characters."
+    message: "Username must be at least 2 characters.",
   }),
-  phone: z.string().refine(isValidPhoneNumber, { message: "Invalid phone number" }),
+  phone: z.string().refine((value) => {
+    if (!value) return false;
+    try {
+      return isValidPhoneNumber(value);
+    } catch {
+      return false;
+    }
+  }, { message: "Invalid phone number" }),
   email: z.string().email({ message: "Invalid email address" }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
-export default function Hero() {
+export default function ContactPage() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -46,10 +53,10 @@ export default function Hero() {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
-      const response = await fetch('api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -58,28 +65,28 @@ export default function Hero() {
 
       if (responseData.success) {
         toast({
-          title: 'Form submitted successfully',
+          title: "Form submitted successfully",
           description: responseData.message,
         });
         form.reset();
       } else {
         toast({
-          title: 'Error submitting form',
+          title: "Error submitting form",
           description: responseData.message,
-          variant: 'destructive',
+          variant: "destructive",
         });
       }
     } catch (error) {
       toast({
-        title: 'Error submitting form',
-        description: 'An error occurred while submitting the form.',
-        variant: 'destructive',
+        title: "Error submitting form",
+        description: "An error occurred while submitting the form.",
+        variant: "destructive",
       });
     }
   }
 
   return (
-    <section className="lg:flex w-full justify-center items-cente p-4">
+    <section className="lg:flex w-full justify-center items-center p-4">
       <div className="lg:flex flex-col p-4 lg:items-center lg:mt-20 lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
         <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
           <h1 className="text-3xl text-center font-bold">Contact</h1>
@@ -89,7 +96,7 @@ export default function Hero() {
             <span className="flex items-center inline-block gap-2">
               <MdAttachEmail />
               <span className="">
-                <Link href="mailto:ahmy40404@gmail.com" target="_blank" type="email">Email</Link>:
+                <Link href="mailto:ahmy40404@gmail.com" target="_blank">Email</Link>:
               </span>
             </span>
             ahmy40404@gmail.com
@@ -98,7 +105,7 @@ export default function Hero() {
             <span className="flex items-center inline-block gap-2">
               <FaPhoneAlt />
               <span className="">
-                <Link href="tel:+916382429579" target="_blank" type="tel">Phone</Link>:
+                <Link href="tel:+916382429579" target="_blank">Phone</Link>:
               </span>
             </span>
             +91 63824 29579
@@ -153,7 +160,12 @@ export default function Hero() {
                 <FormItem className="flex flex-col items-start">
                   <FormLabel className="text-left">Phone Number</FormLabel>
                   <FormControl className="w-full">
-                    <PhoneInput placeholder="Enter a phone number" {...field} />
+                    <PhoneInput
+                      placeholder="Enter a phone number"
+                      value={field.value}
+                      onChange={(value) => field.onChange(value || '')}
+                      defaultCountry="IN"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
