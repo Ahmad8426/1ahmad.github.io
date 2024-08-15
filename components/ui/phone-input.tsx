@@ -1,64 +1,61 @@
 import { CheckIcon, ChevronsUpDown } from "lucide-react";
 
+// ./components/ui/phone-input.tsx
+
 import * as React from "react";
-
-import * as RPNInput from "react-phone-number-input";
-
-import flags from "react-phone-number-input/flags";
-
+import { InputProps } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { Input, InputProps } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-
 import { cn } from "@/lib/utils";
-import { ScrollArea } from "./scroll-area";
+import { Country, usePhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
-type PhoneInputProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "onChange" | "value"
-> &
-  Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> & {
-    onChange?: (value: RPNInput.Value) => void;
-  };
+type PhoneInputProps = Omit<InputProps, "type" | "onChange"> & {
+  value: string;
+  onChange: (value: string) => void;
+  defaultCountry?: Country;
+};
 
-const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
-  React.forwardRef<React.ElementRef<typeof RPNInput.default>, PhoneInputProps>(
-    ({ className, onChange, ...props }, ref) => {
-      return (
-        <RPNInput.default
-          ref={ref}
-          className={cn("flex", className)}
-          flagComponent={FlagComponent}
-          countrySelectComponent={CountrySelect}
-          inputComponent={InputComponent}
-          /**
-           * Handles the onChange event.
-           *
-           * react-phone-number-input might trigger the onChange event as undefined
-           * when a valid phone number is not entered. To prevent this,
-           * the value is coerced to an empty string.
-           *
-           * @param {E164Number | undefined} value - The entered value
-           */
-          onChange={(value) => onChange?.(value || "")}
+const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
+  ({ className, onChange, ...props }, ref) => {
+    const { phone, handlePhoneValueChange, inputRef, country, setCountry } =
+      usePhoneInput({
+        defaultCountry: props.defaultCountry || "US",
+        value: props.value,
+        onChange: (data) => {
+          onChange(data.phone);
+        },
+      });
+
+    return (
+      <div className="flex">
+        <Button
+          type="button"
+          variant="outline"
+          className={cn("px-3 flex items-center justify-center")}
+        >
+          <img
+            alt={country.name}
+            src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${country.iso2}.svg`}
+            className="w-6 h-4 object-contain"
+          />
+        </Button>
+        <Input
           {...props}
+          type="tel"
+          ref={ref}
+          className={cn("rounded-l-none", className)}
+          value={phone}
+          onChange={handlePhoneValueChange}
         />
-      );
-    },
-  );
+      </div>
+    );
+  }
+);
+
 PhoneInput.displayName = "PhoneInput";
+
+export { PhoneInput };
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => (
