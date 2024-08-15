@@ -17,14 +17,14 @@ import { useToast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { parsePhoneNumber, isValidPhoneNumber } from "libphonenumber-js";
+import { isValidPhoneNumber } from "libphonenumber-js";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { Toaster } from "@/components/ui/toaster";
-import { PhoneNumber } from 'libphonenumber-js';
 
 const FormSchema = z.object({
-  // ... other fields
+  name: z.string().min(1, { message: "Name is required" }),
+  email: z.string().email({ message: "Invalid email address" }),
   phone: z.string().refine((value) => {
     if (!value) return false;
     try {
@@ -33,12 +33,13 @@ const FormSchema = z.object({
       return false;
     }
   }, { message: "Invalid phone number" }),
-  email: z.string().email({ message: "Invalid email address" }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
+type FormValues = z.infer<typeof FormSchema>;
+
 export default function ContactPage() {
-  const form = useForm<z.infer<typeof FormSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: "",
@@ -50,7 +51,7 @@ export default function ContactPage() {
 
   const { toast } = useToast();
 
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: FormValues) {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -161,7 +162,7 @@ export default function ContactPage() {
                   <FormControl className="w-full">
                     <PhoneInput
                       placeholder="Enter a phone number"
-                      value={field.value as PhoneNumber}
+                      value={field.value}
                       onChange={(value) => field.onChange(value || '')}
                       defaultCountry="IN"
                     />
