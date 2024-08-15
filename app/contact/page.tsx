@@ -155,24 +155,6 @@ export default function ContactPage() {
             />
             <FormField
               control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem className="flex flex-col items-start">
-                  <FormLabel className="text-left">Phone Number</FormLabel>
-                  <FormControl className="w-full">
-                    <PhoneInput
-                      placeholder="Enter a phone number"
-                      value={field.value}
-                      onChange={(value) => field.onChange(value || '')}
-                      defaultCountry="IN"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="message"
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start w-full">
