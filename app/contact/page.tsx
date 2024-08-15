@@ -153,6 +153,11 @@ export default function ContactPage() {
                 </FormItem>
               )}
             />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="message"
