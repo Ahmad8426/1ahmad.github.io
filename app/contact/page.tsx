@@ -21,11 +21,10 @@ import { parsePhoneNumber, isValidPhoneNumber } from "libphonenumber-js";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { Toaster } from "@/components/ui/toaster";
+import type { E164Number } from 'libphonenumber-js/types';
 
 const FormSchema = z.object({
-  name: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
+  // ... other fields
   phone: z.string().refine((value) => {
     if (!value) return false;
     try {
@@ -162,7 +161,7 @@ export default function ContactPage() {
                   <FormControl className="w-full">
                     <PhoneInput
                       placeholder="Enter a phone number"
-                      value={field.value}
+                      value={field.value as E164Number}
                       onChange={(value) => field.onChange(value || '')}
                       defaultCountry="IN"
                     />
