@@ -153,7 +153,7 @@ export default function Hero() {
                 <FormItem className="flex flex-col items-start">
                   <FormLabel className="text-left">Phone Number</FormLabel>
                   <FormControl className="w-full">
-                    <PhoneInput placeholder="Enter a phone number" {...field} />
+                    <Input type="tel" placeholder="Enter a phone number {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
