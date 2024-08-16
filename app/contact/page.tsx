@@ -30,8 +30,7 @@ const FormSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
-
-export default function Hero() {
+export default function ContactPage() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -79,8 +78,8 @@ export default function Hero() {
   }
 
   return (
-    <section className="lg:flex w-full justify-center items-cente p-4">
-      <div className="lg:flex flex-col p-4 lg:items-center lg:mt-20 lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
+    <div className="w-full p-4">
+      <section className="lg:flex w-full justify-center items-center p-4">
         <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
           <h1 className="text-3xl text-center font-bold">Contact</h1>
         </span>
@@ -177,8 +176,7 @@ export default function Hero() {
             </Button>
           </form>
         </Form>
-      </div>
-      <Toaster />
-    </section>
+      </section>
+    </div>
   );
 }
