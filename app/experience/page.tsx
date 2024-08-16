@@ -22,7 +22,7 @@ const experiences: Experience[] = [
   {
     company: 'Aalim Muhammed Salegh College of Engineering',
     position: 'Machine Learning Researcher',
-    duration: 'Jun 2020 - Aug 2020',
+    duration: 'Jun 2024 - Aug 2024',
     description:
       'Developed an advanced fake news detector using BERT and conducted groundbreaking research on AI ethics, significantly improving content verification and influencing policy-making.',  
   },
