@@ -152,7 +152,7 @@ export default function ContactPage() {
                 <FormItem className="w-full flex flex-col items-start">
                   <FormLabel className="text-left">Phone Number</FormLabel>
                   <FormControl className="w-full">
-                    <Input type="tel" placeholder="Enter a phone number" {...field} />
+                    <PhoneInput type="tel" placeholder="Enter a phone number" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
