@@ -1,5 +1,7 @@
-import React from 'react';
+import { Target } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
+import { GoLinkExternal } from "react-icons/go";
 interface Project {
   name: string;
   duration: string;
@@ -10,23 +12,23 @@ interface Project {
 const projects: Project[] = [
   {
     name: 'Advanced Fake News Detector',
-    duration: 'March 2024 - March 2024',
+    duration: 'May 2023 - July 2023',
     description: `
       - Engineered a hybrid BERT model with 92% accuracy<br />
       - Enhanced content verification reliability, reducing false reports by 80%<br />
       - Achieved 93% precision and 90% recall, outperforming traditional models<br />
-      - Reduced training time by 30% using BERT transfer learning,
+      - Reduced training time by 30% using BERT transfer learning
     `,
-    link: 'https://github.com/Ahmad8426/Fake-News-Detector'
+    link: 'https://example.com',
   },
   {
-    name: 'Reinforcement Learning review',
-    duration: 'Jun 2024 - Aug 2024',
+    name: 'AI Ethics Research Paper',
+    duration: 'Apr 2022 - Jun 2022',
     description: `
       - Conducted research on AI ethics; pending publication<br />
       - Anticipated to influence policy-making for 100+ organizations
     `,
-    link: '/assets/RL review (1).pdf'
+    link: 'https://example.com',
   },
   // Add more projects as needed
 ];
@@ -43,9 +45,12 @@ const ProjectsPage: React.FC = () => {
         </div>
         <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Link href = {project.link} target ='_blank'>
+            <Link href={project.link} target='_blank'>
             <div key={index} className="p-6 border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 rounded-lg shadow-lg">
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{project.name}</h3>
+              <div className="flex items-center justify-between">
+                  <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{project.name}</h3>
+                  <span className="inline block"><GoLinkExternal /></span>
+              </div>
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{project.duration}</time>
               <p
                 className="text-base font-normal text-gray-500 dark:text-gray-400"
