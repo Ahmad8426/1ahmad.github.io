@@ -2,10 +2,14 @@ import { Target } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { GoLinkExternal } from "react-icons/go";
+
 interface Project {
   name: string;
   duration: string;
-	@@ -10,23 +12,23 @@ interface Project {
+  description: string;
+  link: string;
+}
+
 const projects: Project[] = [
   {
     name: 'Advanced Fake News Detector',
@@ -20,7 +24,7 @@ const projects: Project[] = [
   },
   {
     name: 'Reinforment Learning Review',
-    duration: 'Jun 2024 - Aug 2024'
+    duration: 'Jun 2024 - Aug 2024',
     description: `
       - Conducted an in-depth Meta synthesis on advancements of Reinforcement Learning in the last decade<br />
       - Targeted towards young researchers for getting a good initial grasp of development in Reinforcement Learning
@@ -29,20 +33,32 @@ const projects: Project[] = [
   },
   // Add more projects as needed
 ];
-	@@ -43,9 +45,12 @@ const ProjectsPage: React.FC = () => {
-        </div>
-        <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Link href={project.link} target='_blank'>
-            <div key={index} className="p-6 border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 rounded-lg shadow-lg">
+
+const ProjectsPage: React.FC = () => {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold mb-2">Projects</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400">Explore my recent projects and contributions.</p>
+      </div>
+      <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <Link href={project.link} target='_blank' key={index}>
+            <div className="p-6 border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 rounded-lg shadow-lg">
               <div className="flex items-center justify-between">
-                  <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{project.name}</h3>
-                  <span className="inline block"><GoLinkExternal /></span>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{project.name}</h3>
+                <span className="inline-block"><GoLinkExternal /></span>
               </div>
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{project.duration}</time>
               <p
                 className="text-base font-normal text-gray-500 dark:text-gray-400"
-	@@ -60,4 +65,4 @@ const ProjectsPage: React.FC = () => {
+                dangerouslySetInnerHTML={{ __html: project.description }}
+              />
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };
 
