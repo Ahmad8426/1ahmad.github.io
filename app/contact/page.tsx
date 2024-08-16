@@ -83,6 +83,7 @@ export default function ContactPage() {
         <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
           <h1 className="text-3xl text-center font-bold">Contact</h1>
         </span>
+        </section>
         <div className="">
           <p className="text-lg lg:flex items-center flex-wrap gap-4">
             <span className="flex items-center inline-block gap-2">
@@ -149,10 +150,10 @@ export default function ContactPage() {
               control={form.control}
               name="phone"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start">
+                <FormItem className="w-full flex flex-col items-start">
                   <FormLabel className="text-left">Phone Number</FormLabel>
                   <FormControl className="w-full">
-                    <Input type="tel" placeholder="Enter a phone number {...field} />
+                    <Input type="tel" placeholder="Enter a phone number" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -176,7 +177,6 @@ export default function ContactPage() {
             </Button>
           </form>
         </Form>
-      </section>
-    </div>
-  );
-}
+      </div>
+  </div>
+);
