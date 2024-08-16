@@ -78,48 +78,47 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="w-full p-4">
-      <section className="lg:flex w-full justify-center items-center p-4">
-        <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-          <h1 className="text-3xl text-center font-bold">Contact</h1>
-        </span>
-        </section>
-        <div className="">
-          <p className="text-lg lg:flex items-center flex-wrap gap-4">
-            <span className="flex items-center inline-block gap-2">
-              <MdAttachEmail />
-              <span className="">
-                <Link href="mailto:ahmy40404@gmail.com" target="_blank" type="email">Email</Link>:
-              </span>
+  <div className="w-full p-4">
+    <section className="lg:flex w-full justify-center items-center p-4">
+      <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
+        <h1 className="text-3xl text-center font-bold">Contact</h1>
+      </span>
+      <div className="">
+        <p className="text-lg lg:flex items-center flex-wrap gap-4">
+          <span className="flex items-center inline-block gap-2">
+            <MdAttachEmail />
+            <span className="">
+              <Link href="mailto:ahmy40404@gmail.com" target="_blank" type="email">Email</Link>:
             </span>
-            ahmy40404@gmail.com
-          </p>
-          <p className="text-lg lg:flex items-center flex-wrap gap-4">
-            <span className="flex items-center inline-block gap-2">
-              <FaPhoneAlt />
-              <span className="">
-                <Link href="tel:+916382429579" target="_blank" type="tel">Phone</Link>:
-              </span>
+          </span>
+          ahmy40404@gmail.com
+        </p>
+        <p className="text-lg lg:flex items-center flex-wrap gap-4">
+          <span className="flex items-center inline-block gap-2">
+            <FaPhoneAlt />
+            <span className="">
+              <Link href="tel:+916382429579" target="_blank" type="tel">Phone</Link>:
             </span>
-            +91 63824 29579
-          </p>
-          <p className="text-lg lg:flex items-center flex-wrap gap-4">
-            <span className="flex items-center inline-block gap-2">
-              <FaAddressCard />
-              <span className="">
-                <Link href="" target="_blank">Address</Link>:
-              </span>
+          </span>
+          +91 63824 29579
+        </p>
+        <p className="text-lg lg:flex items-center flex-wrap gap-4">
+          <span className="flex items-center inline-block gap-2">
+            <FaAddressCard />
+            <span className="">
+              <Link href="" target="_blank">Address</Link>:
             </span>
-            Chennai, Tamil Nadu, India
-          </p>
-        </div>
+          </span>
+          Chennai, Tamil Nadu, India
+        </p>
       </div>
-      <div className="mt-10 lg:mt-20 border border-gray-500 lg:rounded-l-none p-10 rounded-xl lg:w-1/3">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 flex flex-col items-start"
-          >
+    </section>
+    <div className="mt-10 lg:mt-20 border border-gray-500 lg:rounded-l-none p-10 rounded-xl lg:w-1/3">
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 flex flex-col items-start"
+        >
             <FormField
               control={form.control}
               name="name"
