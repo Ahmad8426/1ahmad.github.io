@@ -78,8 +78,8 @@ export default function ContactPage() {
   }
 
   return (
-  <div className="w-full p-4">
-    <section className="lg:flex w-full justify-center items-center p-4">
+    <section className="lg:flex w-full justify-center items-cente p-4">
+<div className="lg:flex flex-col p-4 lg:items-center lg:mt-20 lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
       <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
         <h1 className="text-3xl text-center font-bold">Contact</h1>
       </span>
@@ -112,7 +112,7 @@ export default function ContactPage() {
           Chennai, Tamil Nadu, India
         </p>
       </div>
-    </section>
+    </div>
     <div className="mt-10 lg:mt-20 border border-gray-500 lg:rounded-l-none p-10 rounded-xl lg:w-1/3">
       <Form {...form}>
         <form
@@ -177,6 +177,6 @@ export default function ContactPage() {
           </form>
         </Form>
       </div>
-  </div>
+      </section>
 );
 }
