@@ -13,7 +13,7 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: 'Tamil Nadu Skill Development Corporation<',
+    company: 'Tamil Nadu Skill Development Corporation',
     position: ' Data Scientist',
     duration: 'April 2024 - July 2024',
     description:
