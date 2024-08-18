@@ -31,7 +31,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 md:w-10/12">
-            I am a researcher specializing in AI and Machine Learning, with expertise in Computer Vision and NLP.
+           Ahmad M is a researcher specializing in AI and Machine Learning, with expertise in Computer Vision and NLP.
           </p>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
             <Link href="/contact">
@@ -41,7 +41,7 @@ export default function Home() {
             </Link>
             <Link href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="w-full md:w-auto px-8 py-3 border-white text-white font-bold rounded-md hover:bg-white hover:text-black transition-colors">
-                My Resume
+                Resume
               </Button>
             </Link>
           </div>
@@ -51,11 +51,6 @@ export default function Home() {
       <footer className="mt-12 flex flex-col items-center space-y-4">
         <div className="flex items-center space-x-4">
           <Image src="/assets/profile-image.jpg" alt="Ahmad M" width={80} height={80} className="rounded-full" />
-          <div>
-            <h2 className="text-xl font-bold">Ahmad M</h2>
-            <p className="text-[#F596D3]">Researcher | AI, Machine Learning</p>
-          </div>
-        </div>
         <div className="flex space-x-4">
           <a href="https://github.com/Ahmad8426" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
             <FaGithub size={24} />
