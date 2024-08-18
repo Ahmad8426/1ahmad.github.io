@@ -24,7 +24,7 @@ const experiences: Experience[] = [
     position: 'Machine Learning Researcher',
     duration: 'Jun 2024 - Aug 2024',
     description:
-      'Developed an advanced fake news detector using BERT and conducted groundbreaking research on AI ethics, significantly improving content verification and influencing policy-making.',  
+      'Developed an advanced fake news detector using BERT and conducted meta synthesis of 4 seminal Reinforcement Learning, to get a grasp of technical foundations and recent advances in the field.',  
   },
   // Add more experiences as needed
 ];
