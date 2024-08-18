@@ -15,17 +15,11 @@ export default function About() {
           />
           <h1 className="scroll-m-20 md:text-4xl text-2xl text-center 
            font-extrabold tracking-tight lg:text-5xl relative dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
-            Mohamed Ahmad M <span className="inline-block">L M</span>
+             Ahmad M <span className="inline-block">L M</span>
           </h1>
           <h2 className="text-2xl font-bold tracking-tight">Software Engineer</h2>
           <p className="text-justify">
-          With a passion for IoT and embedded systems, I am pursuing a Bachelor of Engineering degree in Electronics and Communication Engineering at Aalim Muhammed Salegh College of Engineering.
-  
-  In my coursework and projects, I have developed knowledge and skills in IoT, Cloud and Edge Computing, Docker and Kubernetes, Machine Learning at the Edge, Python, C, Node.js, Next.js, TypeScript, and networking.
-  
-  I have earned multiple certifications from LinkedIn, ISRO, NPTEL, HackerRank, etc for completing courses and workshops on these topics, demonstrating my commitment to continuous learning and professional development. 
-  
-  I am eager to apply my knowledge and skills to solve real-world problems and contribute to the advancement of science and technology. I am looking for internships or projects that will allow me to gain valuable experience and learn from experts and peers in the ECE domain.
+          
           </p>
         </div>
         </div>
