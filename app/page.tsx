@@ -46,9 +46,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="mt-12 md:mt-0 md:w-1/2">
-          <HeroCards />
-        </div>
       </main>
 
       <footer className="mt-12 flex flex-col items-center space-y-4">
