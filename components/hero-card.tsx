@@ -25,7 +25,7 @@ export const HeroCards = () => {
           Researcher | AI, Machine Learning
           </CardDescription>
         </CardHeader>
-Machine
+        
         <CardContent className="text-center pb-2">
           <p>
             
