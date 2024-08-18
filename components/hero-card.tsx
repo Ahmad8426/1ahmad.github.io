@@ -10,8 +10,8 @@ import {
 import { Check, Linkedin } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
-//export const HeroCards = () => {
-//  return (
+export const HeroCards = () => {
+  return (
     <div className="flex flex-wrap gap-8 relative max-w-xl">
       <Card className="absolute flex flex-col drop-shadow-xl shadow-black/10 dark:shadow-white/10">{/* shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] */}
         <CardHeader className="mt-8 flex justify-center items-center pb-2">
@@ -25,10 +25,10 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
           Researcher | AI, Machine Learning
           </CardDescription>
         </CardHeader>
-
+Machine
         <CardContent className="text-center pb-2">
           <p>
-          Ahmad M. is a dedicated researcher with a strong focus on Artificial Intelligence and Machine Learning. His expertise spans several key areas within these fields, with particular emphasis on Sentiment Analysis, a crucial component in understanding and interpreting human emotions and opinions from textual data. Ahmad's proficiency in Python, one of the most versatile and widely-used programming languages in AI and data science, allows him to efficiently implement complex algorithms and develop robust machine learning models. His deep understanding of Machine Learning principles and techniques enables him to tackle challenging problems in data analysis, pattern recognition, and predictive modeling. With a solid foundation in these cutting-edge technologies, Ahmad is well-equipped to contribute to innovative research and practical applications in the rapidly evolving landscape of AI and Machine Learning.
+            
           </p>
         </CardContent>
 
