@@ -72,12 +72,12 @@ export default function ContactPage() {
         </span>
         <div className="space-y-4">
           <p className="text-lg flex items-center gap-2">
-            <MdAttachEmail className="text-blue-500 hover:text-blue-700 transition-colors" />
-            <Link href="mailto:ahmy40404@gmail.com" target="_blank" className="hover:underline text-blue-500">ahmy40404@gmail.com</Link>
+            <MdAttachEmail className="text-blue-500" />
+            <Link href="mailto:ahmy40404@gmail.com" target="_blank" className="hover:underline text-blue-500 hover:text-blue-700 transition-colors px-4 py-2 border border-blue-500 rounded-md">ahmy40404@gmail.com</Link>
           </p>
           <p className="text-lg flex items-center gap-2">
-            <FaPhoneAlt className="text-blue-500 hover:text-blue-700 transition-colors" />
-            <Link href="tel:+916382429579" target="_blank" className="hover:underline text-blue-500">+91 63824 29579</Link>
+            <FaPhoneAlt className="text-blue-500" />
+            <Link href="tel:+916382429579" target="_blank" className="hover:underline text-blue-500 hover:text-blue-700 transition-colors px-4 py-2 border border-blue-500 rounded-md">+91 63824 29579</Link>
           </p>
         </div>
       </div>
