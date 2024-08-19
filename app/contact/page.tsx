@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form/dist/useForm";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { z } from "zod";
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
