@@ -15,10 +15,10 @@ const projects: Project[] = [
     name: 'Advanced Fake News Detector',
     duration: 'March 2023 - March 2023',
     description: `
-      - Engineered a hybrid BERT model with 92% accuracy<br />
-      - Enhanced content verification reliability, reducing false reports by 80%<br />
-      - Achieved 93% precision and 90% recall, outperforming traditional models<br />
-      - Reduced training time by 30% using BERT transfer learning
+      - Engineered a machine learning-based fake news detector using the Passive Aggressive Classifier
+- Enhanced content verification reliability with TF-IDF vectorization
+- Achieved approximately 93% average accuracy
+- Reduced training time by using efficient data preprocessing techniques
     `,
     link: 'https://github.com/Ahmad8426/Fake-News-Detector',
   },
