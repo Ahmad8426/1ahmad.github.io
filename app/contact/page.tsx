@@ -86,7 +86,7 @@ export default function ContactPage() {
         <div className="">
           <p className="text-lg lg:flex items-center flex-wrap gap-4">
             <span className="flex items-center inline-block gap-2">
-              <MdAttachEmail className="text-blue-500 hover:text-blue-700 transition-colors" />
+              <MdAttachEmail className="text-blue-500" />
               <span className="hover:underline">
                 <Link href="mailto:ahmy40404@gmail.com" target="_blank" type="email">Email</Link>:
               </span>
@@ -97,7 +97,7 @@ export default function ContactPage() {
           </p>
           <p className="text-lg lg:flex items-center flex-wrap gap-4">
             <span className="flex items-center inline-block gap-2">
-              <FaPhoneAlt className="text-blue-500 hover:text-blue-700 transition-colors" />
+              <FaPhoneAlt className="text-blue-500" />
               <span className="hover:underline">
                 <Link href="tel:+916382429579" target="_blank" type="tel">Phone</Link>:
               </span>
@@ -108,7 +108,7 @@ export default function ContactPage() {
           </p>
           <p className="text-lg lg:flex items-center flex-wrap gap-4">
             <span className="flex items-center inline-block gap-2">
-              <FaAddressCard className="text-blue-500 hover:text-blue-700 transition-colors" />
+              <FaAddressCard className="text-blue-500" />
               <span className="hover:underline">
                 <Link href="" target="_blank">Address</Link>:
               </span>
