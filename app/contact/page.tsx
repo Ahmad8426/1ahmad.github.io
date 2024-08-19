@@ -1,18 +1,3 @@
-"use client"
-import { Button } from "@/components/ui/button";
-import { FaAddressCard, FaPhoneAlt } from "react-icons/fa";
-import { MdAttachEmail } from "react-icons/md";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { PhoneInput } from "@/components/ui/phone-input";
-import { useToast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { isValidPhoneNumber } from "react-phone-number-input";
@@ -21,6 +6,8 @@ import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { Toaster } from "@/components/ui/toaster";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdAttachEmail } from "react-icons/md";
 
 const FormSchema = z.object({
   name: z.string().min(2, {
@@ -78,42 +65,19 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="lg:flex w-full justify-center items-cente p-4">
+    <section className="lg:flex w-full justify-center items-center p-4">
       <div className="lg:flex flex-col p-4 lg:items-center lg:mt-20 lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
         <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
           <h1 className="text-3xl text-center font-bold">Contact</h1>
         </span>
-        <div className="">
-          <p className="text-lg lg:flex items-center flex-wrap gap-4">
-            <span className="flex items-center inline-block gap-2">
-              <MdAttachEmail className="text-blue-500" />
-              <span className="hover:underline">
-                <Link href="mailto:ahmy40404@gmail.com" target="_blank" type="email">Email</Link>:
-              </span>
-            </span>
-            <span className="hover:underline">
-              <Link href="mailto:ahmy40404@gmail.com" target="_blank">ahmy40404@gmail.com</Link>
-            </span>
+        <div className="space-y-4">
+          <p className="text-lg flex items-center gap-2">
+            <MdAttachEmail className="text-blue-500 hover:text-blue-700 transition-colors" />
+            <Link href="mailto:ahmy40404@gmail.com" target="_blank" className="hover:underline text-blue-500">ahmy40404@gmail.com</Link>
           </p>
-          <p className="text-lg lg:flex items-center flex-wrap gap-4">
-            <span className="flex items-center inline-block gap-2">
-              <FaPhoneAlt className="text-blue-500" />
-              <span className="hover:underline">
-                <Link href="tel:+916382429579" target="_blank" type="tel">Phone</Link>:
-              </span>
-            </span>
-            <span className="hover:underline">
-              <Link href="tel:+916382429579" target="_blank">+91 63824 29579</Link>
-            </span>
-          </p>
-          <p className="text-lg lg:flex items-center flex-wrap gap-4">
-            <span className="flex items-center inline-block gap-2">
-              <FaAddressCard className="text-blue-500" />
-              <span className="hover:underline">
-                <Link href="" target="_blank">Address</Link>:
-              </span>
-            </span>
-            Chennai, Tamil Nadu, India
+          <p className="text-lg flex items-center gap-2">
+            <FaPhoneAlt className="text-blue-500 hover:text-blue-700 transition-colors" />
+            <Link href="tel:+916382429579" target="_blank" className="hover:underline text-blue-500">+91 63824 29579</Link>
           </p>
         </div>
       </div>
@@ -123,64 +87,64 @@ export default function ContactPage() {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8 flex flex-col items-start"
           >
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col items-start w-full">
-                    <FormLabel>Full Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter Your Name" className="w-full" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col items-start w-full">
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter Your Email" className="w-full" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem className="w-full flex flex-col items-start">
-                    <FormLabel className="text-left">Phone Number</FormLabel>
-                    <FormControl className="w-full">
-                      <PhoneInput type="tel" placeholder="Enter a phone number" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col items-start w-full">
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Enter Your Message" className="w-full" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="grid">
-                Submit
-              </Button>
-            </form>
-          </Form>
-        </div>
-      </section>
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start w-full">
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter Your Name" className="w-full" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start w-full">
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter Your Email" className="w-full" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="w-full flex flex-col items-start">
+                  <FormLabel className="text-left">Phone Number</FormLabel>
+                  <FormControl className="w-full">
+                    <PhoneInput type="tel" placeholder="Enter a phone number" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start w-full">
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Enter Your Message" className="w-full" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit" className="grid">
+              Submit
+            </Button>
+          </form>
+        </Form>
+      </div>
+    </section>
   );
 }
