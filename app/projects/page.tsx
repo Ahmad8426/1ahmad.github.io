@@ -18,7 +18,7 @@ const projects: Project[] = [
       - Engineered a machine learning-based fake news detector using the Passive Aggressive Classifier </ br>
 - Enhanced content verification reliability with TF-IDF vectorization   </ br>
 - Achieved approximately 93% average accuracy </ br>
-- Reduced training time by using efficient data preprocessing techniques </ br>
+- Reduced training time by using efficient data preprocessing techniques
     `,
     link: 'https://github.com/Ahmad8426/Fake-News-Detector',
   },
