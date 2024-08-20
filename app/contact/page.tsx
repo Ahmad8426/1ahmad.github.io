@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import { FaAddressCard, FaPhoneAlt } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
@@ -78,85 +78,23 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="lg:flex w-full justify-center items-center p-4">
-      <div className="lg:flex flex-col p-4 lg:items-center lg:mt-20 lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
-        <span className="p-4 inline-block w-full bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-          <h1 className="text-3xl text-center font-bold">Contact</h1>
-        </span>
-        <div className="space-y-4">
-          <p className="text-lg flex items-center gap-2">
-            <MdAttachEmail className="text-blue-500" />
-            <Link href="mailto:ahmy40404@gmail.com" target="_blank" className="hover:underline text-blue-500 hover:text-blue-700 transition-colors px-4 py-2 border border-blue-500 rounded-md">ahmy40404@gmail.com</Link>
-          </p>
-          <p className="text-lg flex items-center gap-2">
-            <FaPhoneAlt className="text-blue-500" />
-            <Link href="tel:+916382429579" target="_blank" className="hover:underline text-blue-500 hover:text-blue-700 transition-colors px-4 py-2 border border-blue-500 rounded-md">+91 63824 29579</Link>
-          </p>
+    <section className="pb-16 mb-16 mt-20 w-full">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h1 className="text-3xl text-center font-bold tracking-tight text-black dark:text-white sm:text-4xl">Contact</h1>
         </div>
-      </div>
-      <div className="mt-10 lg:mt-20 border border-gray-500 lg:rounded-l-none p-10 rounded-xl lg:w-1/3">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 flex flex-col items-start"
-          >
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem className="flex flex-col items-start w-full">
-                  <FormLabel>Full Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter Your Name" className="w-full" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem className="flex flex-col items-start w-full">
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter Your Email" className="w-full" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem className="w-full flex flex-col items-start">
-                  <FormLabel className="text-left">Phone Number</FormLabel>
-                  <FormControl className="w-full">
-                    <PhoneInput type="tel" placeholder="Enter a phone number" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem className="flex flex-col items-start w-full">
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Enter Your Message" className="w-full" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="grid">
-              Submit
-            </Button>
-          </form>
-        </Form>
+        <div className="lg:flex flex-col p-4 lg:items-center lg:mt-20 lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
+          <div className="space-y-4">
+            <p className="text-lg flex items-center gap-2">
+              <MdAttachEmail className="text-gray-600 dark:text-gray-300" />
+              <Link href="mailto:ahmy40404@gmail.com" target="_blank" className="hover:underline text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors px-4 py-2 border border-gray-600 dark:border-gray-300 rounded-md">ahmy40404@gmail.com</Link>
+            </p>
+            <p className="text-lg flex items-center gap-2">
+              <FaPhoneAlt className="text-gray-600 dark:text-gray-300" />
+              <Link href="tel:+916382429579" target="_blank" className="hover:underline text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors px-4 py-2 border border-gray-600 dark:border-gray-300 rounded-md">+91 63824 29579</Link>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
