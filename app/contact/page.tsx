@@ -82,7 +82,7 @@ export default function ContactPage() {
           <h1 className="text-3xl text-center font-bold tracking-tight text-black dark:text-white sm:text-4xl">Contact</h1>
         </div>
         <div className="lg:flex justify-center items-center mt-20">
-          <div className="lg:flex flex-col p-4 lg:items-center lg:border border-gray-500 rounded-r-none pt-20 lg:py-40 rounded-xl lg:w-1/3">
+          <div className="lg:flex flex-col p-4 lg:items-center lg:border border-gray-500 rounded-r-none rounded-xl lg:w-1/3">
             <div className="space-y-4">
               <p className="text-lg flex items-center gap-2">
                 <MdAttachEmail className="text-gray-600 dark:text-gray-300" />
