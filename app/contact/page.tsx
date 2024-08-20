@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import { FaAddressCard, FaPhoneAlt } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
 import {
- Form,
- FormControl,
- FormField,
- FormItem,
- FormLabel,
- FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
@@ -95,36 +95,38 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-        <Form onSubmit={form.handleSubmit(onSubmit)}>
-          <FormField name="name">
-            <FormLabel>Name</FormLabel>
-            <FormControl>
-              <Input placeholder="Your Name" {...form.register("name")} />
-            </FormControl>
-            <FormMessage>{form.formState.errors.name?.message}</FormMessage>
-          </FormField>
-          <FormField name="email">
-            <FormLabel>Email</FormLabel>
-            <FormControl>
-              <Input placeholder="Your Email" {...form.register("email")} />
-            </FormControl>
-            <FormMessage>{form.formState.errors.email?.message}</FormMessage>
-          </FormField>
-          <FormField name="phone">
-            <FormLabel>Phone</FormLabel>
-            <FormControl>
-              <PhoneInput placeholder="Your Phone" {...form.register("phone")} />
-            </FormControl>
-            <FormMessage>{form.formState.errors.phone?.message}</FormMessage>
-          </FormField>
-          <FormField name="message">
-            <FormLabel>Message</FormLabel>
-            <FormControl>
-              <Textarea placeholder="Your Message" {...form.register("message")} />
-            </FormControl>
-            <FormMessage>{form.formState.errors.message?.message}</FormMessage>
-          </FormField>
-          <Button type="submit">Submit</Button>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <FormField name="name">
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input placeholder="Your Name" {...form.register("name")} />
+              </FormControl>
+              <FormMessage>{form.formState.errors.name?.message}</FormMessage>
+            </FormField>
+            <FormField name="email">
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input placeholder="Your Email" {...form.register("email")} />
+              </FormControl>
+              <FormMessage>{form.formState.errors.email?.message}</FormMessage>
+            </FormField>
+            <FormField name="phone">
+              <FormLabel>Phone</FormLabel>
+              <FormControl>
+                <PhoneInput placeholder="Your Phone" {...form.register("phone")} />
+              </FormControl>
+              <FormMessage>{form.formState.errors.phone?.message}</FormMessage>
+            </FormField>
+            <FormField name="message">
+              <FormLabel>Message</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Your Message" {...form.register("message")} />
+              </FormControl>
+              <FormMessage>{form.formState.errors.message?.message}</FormMessage>
+            </FormField>
+            <Button type="submit">Submit</Button>
+          </form>
         </Form>
       </div>
       <Toaster />
