@@ -1,44 +1,44 @@
-import { HeroCards } from "@/components/hero-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
-  export default function Home() {
-    return (
-      <section className="container grid lg:grid-cols-2 -mt-28 place-items-center py-20 md:py-32 gap-10 bottom-4">
-      <div className="text-center h-screen lg:h-auto flex flex-col items-center lg:text-start space-y-6">
-        <main className="text-5xl md:text-6xl flex flex-col items-center mt-40 lg:pt-8 font-bold">
-          <h1 className="inline py-2">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Welcome
-            </span>{" "}
-            
-        </main>
-
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-        I am a researcher specializing in AI and Machine Learning, with expertise in Computer Vision and NLP.
+export default function Home() {
+  return (
+    <section className="container mx-auto px-4 py-12 min-h-screen flex flex-col justify-between bg-white dark:bg-black text-black dark:text-white">
+      <main className="flex-grow flex flex-col items-center justify-center space-y-8">
+        <h1 className="text-5xl md:text-6xl font-bold text-center">
+          <span className="bg-gradient-to-r from-[#F596D3] to-[#D247BF] text-transparent bg-clip-text">
+            Welcome
+          </span>
+        </h1>
+        <p className="text-xl text-gray-700 dark:text-gray-300 text-center max-w-2xl">
+          Ahmad M. is a researcher specializing in AI and Machine Learning, with expertise in Computer Vision and NLP.
         </p>
-
-        <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Link href="/contact"><Button className="w-full md:w-1/3">Contact</Button></Link>
-
-          <Link
-            rel="Ahmad M"
-            href="/assets/resume.pdf"
-            target="_blank"
-            className={`w-full p-4 md:w-1/3`}
-          >
-            <span className="inline-block py-4">My Resume</span>
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full max-w-md">
+          <Link href="/contact" className="w-full sm:w-1/2">
+            <Button className="w-full bg-black dark:bg-white text-white dark:text-black font-bold rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+              Contact
+            </Button>
+          </Link>
+          <Link href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/2">
+            <Button variant="outline" className="w-full border-black dark:border-white text-black dark:text-white font-bold rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
+              Resume
+            </Button>
           </Link>
         </div>
-      </div>
-      
-      {/* Hero cards sections */}
-      <div className="w-full lg:-mt-60 py-8">
-        <HeroCards />
-      </div>
+      </main>
 
-      {/* Shadow effect */}
-      <div className="shadow"></div>
+      <footer className="mt-12 flex justify-center space-x-6">
+        <a href="https://github.com/Ahmad8426" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
+          <FaGithub size={24} />
+        </a>
+        <a href="" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
+          <FaTwitter size={24} />
+        </a>
+        <a href="https://linkedin.com/in/1ahmadm" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
+          <FaLinkedin size={24} />
+        </a>
+      </footer>
     </section>
-    );
-  }
+  );
+}
