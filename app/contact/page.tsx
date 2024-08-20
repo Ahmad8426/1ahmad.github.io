@@ -87,15 +87,47 @@ export default function ContactPage() {
           <div className="space-y-4">
             <p className="text-lg flex items-center gap-2">
               <MdAttachEmail className="text-gray-600 dark:text-gray-300" />
-              <Link href="mailto:ahmy40404@gmail.com" target="_blank" className="hover:underline text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors px-4 py-2 border border-gray-600 dark:border-gray-300 rounded-md">ahmy40404@gmail.com</Link>
+              <span>Email: example@example.com</span>
             </p>
             <p className="text-lg flex items-center gap-2">
               <FaPhoneAlt className="text-gray-600 dark:text-gray-300" />
-              <Link href="tel:+916382429579" target="_blank" className="hover:underline text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors px-4 py-2 border border-gray-600 dark:border-gray-300 rounded-md">+91 63824 29579</Link>
+              <span>Phone: +1234567890</span>
             </p>
           </div>
         </div>
+        <Form onSubmit={form.handleSubmit(onSubmit)}>
+          <FormField name="name">
+            <FormLabel>Name</FormLabel>
+            <FormControl>
+              <Input placeholder="Your Name" {...form.register("name")} />
+            </FormControl>
+            <FormMessage>{form.formState.errors.name?.message}</FormMessage>
+          </FormField>
+          <FormField name="email">
+            <FormLabel>Email</FormLabel>
+            <FormControl>
+              <Input placeholder="Your Email" {...form.register("email")} />
+            </FormControl>
+            <FormMessage>{form.formState.errors.email?.message}</FormMessage>
+          </FormField>
+          <FormField name="phone">
+            <FormLabel>Phone</FormLabel>
+            <FormControl>
+              <PhoneInput placeholder="Your Phone" {...form.register("phone")} />
+            </FormControl>
+            <FormMessage>{form.formState.errors.phone?.message}</FormMessage>
+          </FormField>
+          <FormField name="message">
+            <FormLabel>Message</FormLabel>
+            <FormControl>
+              <Textarea placeholder="Your Message" {...form.register("message")} />
+            </FormControl>
+            <FormMessage>{form.formState.errors.message?.message}</FormMessage>
+          </FormField>
+          <Button type="submit">Submit</Button>
+        </Form>
       </div>
+      <Toaster />
     </section>
   );
 }
