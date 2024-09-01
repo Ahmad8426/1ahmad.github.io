@@ -12,8 +12,8 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'Advanced Fake News Detector',
-    duration: 'March 2023 - March 2023',
+    name: 'Fake News Detector',
+    duration: 'March 2024 - March 2024',
     description: `
       - Engineered a machine learning-based fake news detector using the Passive Aggressive Classifier <br />
 - Enhanced content verification reliability with TF-IDF vectorization <br />
