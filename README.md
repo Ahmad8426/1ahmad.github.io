@@ -1,9 +1,5 @@
 # Ahmad M. Portfolio
 
-Welcome to the repository for my personal portfolio website.
-
-## Description
-
 This portfolio website showcases my work and provides information about my background and skills. As a machine learning researcher, web development is not my primary field, but I always strive to go beyond my comfort zone, and this project is one such attempt.
 
 ## Technologies Used
