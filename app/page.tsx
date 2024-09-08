@@ -20,7 +20,7 @@ export default function Home() {
               Contact
             </Button>
           </Link>
-          <Link href="/assets/Profile (2).pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/2">
+          <Link href="/assets/Profile (4).pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/2">
             <Button variant="outline" className="w-full border-black dark:border-white text-black dark:text-white font-bold rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               Resume
             </Button>
