@@ -1,20 +1,20 @@
 # Ahmad M. Portfolio
 
-This portfolio website showcases my work and provides information about my background and skills. As a machine learning researcher, web development is not my primary field, but I always strive to go beyond my comfort zone, and this project is one such attempt.
+Welcome to my portfolio website! While web development isn't my main focus as a machine learning researcher, I enjoy pushing my boundaries.
 
 ## Technologies Used
 
-- **Next.js**: A React framework for building fast and user-friendly websites.
-- **TypeScript**: A typed superset of JavaScript that enhances code quality and maintainability.
+- **Next.js**: A React framework for fast, user-friendly websites.
+- **TypeScript**: Enhances JavaScript with type safety.
 
 ## Live Website
 
-Check out my portfolio website [here](http://www.1ahmad.me).
+Visit my portfolio at [1ahmad.me](http://www.1ahmad.me).
 
 ## About Me
 
-I am a machine learning researcher with a passion for AI and data science. Web development might not be my primary focus, but I enjoy exploring new technologies and expanding my skill set.
+I'm passionate about AI and data science. This project is a testament to my love for learning new technologies.
 
 ## Contact
 
-Feel free to reach out to me through the contact form on my [website](http://www.1ahmad.me/contact) if you have any questions or opportunities.
+Reach out via the [contact form](http://www.1ahmad.me/contact) on my website for any inquiries or opportunities.
