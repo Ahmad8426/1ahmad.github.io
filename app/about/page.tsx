@@ -1,11 +1,13 @@
-import MenuBar from "@/components/menu";
 import Image from "next/image";
+
 export default function About() {
-    return (
-        <section>
-      
-        <div className="mt-10 lg:pt-10 md:p-4">
-        <div className="flex flex-col items-center justify-center space-y-8">
+  return (
+    <section className="pb-16 mb-16 mt-20 w-full">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h1 className="text-3xl text-center font-bold tracking-tight text-black dark:text-white sm:text-4xl">About Me</h1>
+        </div>
+        <div className="mt-10 lg:mt-20 flex flex-col items-center">
           <Image
             src="/assets/avatar.jpg"
             alt="Mohamed Ahmad M L M"
@@ -13,16 +15,13 @@ export default function About() {
             height={200}
             className="rounded-full"
           />
-          <h1 className="scroll-m-20 md:text-4xl text-2xl text-center 
-           font-extrabold tracking-tight lg:text-5xl relative dark:drop-shadow-[0_0_0.3rem_#ffffff70]">
-             Ahmad M <span className="inline-block">L M</span>
-          </h1>
-          <h2 className="text-2xl font-bold tracking-tight">Software Engineer</h2>
-          <p className="text-justify">
-          
+          <h2 className="mt-6 text-2xl font-bold tracking-tight text-black dark:text-white">Ahmad M L M</h2>
+          <h3 className="mt-2 text-xl font-semibold text-primary dark:text-primary">Software Engineer</h3>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl">
+            I am a passionate software engineer with a strong background in developing scalable web applications and working across the full stack. I have experience in various technologies including React, Node.js, and MongoDB. I enjoy solving complex problems and continuously learning new skills to stay up-to-date with the latest industry trends.
           </p>
         </div>
-        </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }

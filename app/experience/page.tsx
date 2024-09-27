@@ -34,7 +34,7 @@ const ExperienceSection: React.FC = () => {
     <section className="pb-16 mb-16 mt-20 w-full">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-3xl text-center font-bold tracking-tight text-white sm:text-4xl">Experience</h2>
+          <h2 className="text-3xl text-center font-bold tracking-tight text-black dark:text-white sm:text-4xl">Experience</h2>
           <p className="mt-4 text-gray-400 dark:text-gray-500">
             Here are some of my professional experiences:
           </p>

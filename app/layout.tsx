@@ -35,7 +35,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Topbar />
     <main className="flex"> 
         <section className="flex w-full">
-            {children}
+            <LeftSidebar />
+            <div className="flex-grow p-4">
+              {children}
+            </div>
     </section>
     </main>
   </ThemeProvider>

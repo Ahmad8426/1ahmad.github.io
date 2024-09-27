@@ -1,4 +1,3 @@
-import { Target } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { GoLinkExternal } from "react-icons/go";
