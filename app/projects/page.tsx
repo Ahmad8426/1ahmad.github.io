@@ -12,17 +12,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'Fake News Detector',
-    duration: 'March 2024 - March 2024',
-    description: `
-      - Engineered a machine learning-based fake news detector using the Passive Aggressive Classifier <br />
-- Enhanced content verification reliability with TF-IDF vectorization <br />
-- Achieved approximately 93% average accuracy <br />
-- Reduced training time by using efficient data preprocessing techniques
-    `,
-    link: 'https://github.com/Ahmad8426/Fake-News-Detector',
-  },
-  {
     name: 'Reinforment Learning Review',
     duration: 'Jun 2024 - Aug 2024',
     description: `
